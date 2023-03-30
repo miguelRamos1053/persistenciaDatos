@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import persistencia_datos.entidades.Ahorro;
 import persistencia_datos.entidades.Corriente;
+import persistencia_datos.gui.GUI_Cuenta;
 import persistencia_datos.repositorio.CuentaDB;
 import persistencia_datos.repositorio.Repositorio;
 
@@ -13,28 +14,48 @@ import persistencia_datos.repositorio.Repositorio;
  */
 public class App {
     public static void main(String[] args) {
-        Repositorio repositorio = new CuentaDB();
+        // Repositorio repositorio = new CuentaDB();
 
-        Ahorro ahorro1 = new Ahorro(1, "dd", 30000, "nuevooo", 0);
+        // ----- CUENTA AHORRO ----------------------------------------------------
+
+        // Ahorro ahorro1 = new Ahorro(1, "dd", 30000, "nuevooo", 0);
         // Ahorro ahorro2 = new Ahorro(0, "rrr", 20000, "Tigre1", 0);
 
-        Corriente corriente1 = new Corriente(0, "zz", 20000, "Bard C nuevo", 0);
-
+        // ----Crear ahorro ----
         // repositorio.crearAhorro(ahorro1);
         // repositorio.crearAhorro(ahorro2);
 
+        // ---- Actualizar ahorro -----
+        // repositorio.actualizarAhorro(ahorro1);
+
+        // ---Listar Ahorro ---
+        // ArrayList<Ahorro> ahorrosBaseDatos = (ArrayList<Ahorro>)
+        // repositorio.listarAhorros();
+
+        // for (Ahorro ahorroBaseDatos : ahorrosBaseDatos) {
+        // System.out.println(ahorroBaseDatos.getPropietario());
+        // }
+
+        // ----- CUENTA CORRIENTE ----------------------------------------------------
+
+        // Corriente corriente1 = new Corriente(0, "zz", 20000, "Bard C nuevo", 0);
+
+        // ----Crear corriente ----
         // repositorio.crearCorriente(corriente1);
 
-        // repositorio.actualizarAhorro(ahorro1);
-        repositorio.actualizarCorriente(corriente1);
+        // ---- Actualizar corriente -----
+        // repositorio.actualizarCorriente(corriente1);
 
-        ArrayList<Corriente> corrientesBaseDatos = (ArrayList<Corriente>) repositorio.listarCorrientes();
+        // ---Listar corriente ---
+        // ArrayList<Corriente> corrientesBaseDatos = (ArrayList<Corriente>)
+        // repositorio.listarCorrientes();
 
-        ArrayList<Ahorro> ahorrosBaseDatos = (ArrayList<Ahorro>) repositorio.listarAhorros();
+        // for (Corriente corrienteBaseDatos : corrientesBaseDatos) {
+        // System.out.println(corrienteBaseDatos.getPropietario());
+        // }
 
-        for (Corriente corrienteBaseDatos : corrientesBaseDatos) {
-            System.out.println(corrienteBaseDatos.getPropietario());
-        }
+        GUI_Cuenta gui = new GUI_Cuenta();
+        gui.iniciar();
 
     }
 }
