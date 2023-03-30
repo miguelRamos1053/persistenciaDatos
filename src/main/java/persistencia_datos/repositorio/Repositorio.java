@@ -7,8 +7,16 @@ public interface Repositorio {
     // CUENTA AHORROS
     public void crearAhorro(Object objeto);
 
+    public void actualizarAhorro(Object objeto);
+
+    public List<?> listarAhorros();
+
     // CUENTA CORRIENTE
     public void crearCorriente(Object objeto);
+
+    public void actualizarCorriente(Object objeto);
+
+    public List<?> listarCorrientes();
 
     public Object buscar(String numeroCuenta);
 
@@ -16,5 +24,4 @@ public interface Repositorio {
 
     public void actualizar(Object objeto);
 
-    public List<?> listar();
 }
