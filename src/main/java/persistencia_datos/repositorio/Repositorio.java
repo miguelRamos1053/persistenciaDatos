@@ -9,6 +9,8 @@ public interface Repositorio {
 
     public void actualizarAhorro(Object objeto);
 
+    public Object buscarAhorro(String numeroCuenta);
+
     public List<?> listarAhorros();
 
     // CUENTA CORRIENTE
@@ -17,8 +19,6 @@ public interface Repositorio {
     public void actualizarCorriente(Object objeto);
 
     public List<?> listarCorrientes();
-
-    public Object buscar(String numeroCuenta);
 
     public void eliminar(String identificador);
 

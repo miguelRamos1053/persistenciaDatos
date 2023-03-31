@@ -135,9 +135,28 @@ public class CuentaDB implements Repositorio {
     }
 
     @Override
-    public Object buscar(String numeroCuenta) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscar'");
+    public Object buscarAhorro(String numCuenta) {
+        try (Connection conexion = DriverManager.getConnection(cadenaConexion)) {
+
+            String sentenciaSQL = "SELECT * FROM cuenta WHERE tipo='Ahorro' AND numeroCuenta = ?";
+            PreparedStatement sentencia = conexion.prepareStatement(sentenciaSQL);
+            sentencia.setString(1, numCuenta);
+            ResultSet resultadoConsulta = sentencia.executeQuery();
+            if (resultadoConsulta != null && resultadoConsulta.next()) {
+                Ahorro ahorro = null;
+                String numeroCuenta = resultadoConsulta.getString("numeroCuenta");
+                float saldo = resultadoConsulta.getFloat("saldo");
+                String propietario = resultadoConsulta.getString("propietario");
+                int retiros = resultadoConsulta.getInt("retiros");
+                int depositos = resultadoConsulta.getInt("depositos");
+                ahorro = new Ahorro(depositos, numeroCuenta, saldo, propietario, retiros);
+                return ahorro;
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error de conexión: " + e);
+        }
+        return null;
     }
 
     @Override

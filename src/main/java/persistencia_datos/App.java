@@ -18,7 +18,7 @@ public class App {
 
         // ----- CUENTA AHORRO ----------------------------------------------------
 
-        // Ahorro ahorro1 = new Ahorro(1, "dd", 30000, "nuevooo", 0);
+        // Ahorro ahorro1 = new Ahorro(1, "111", 30000, "Bard", 0);
         // Ahorro ahorro2 = new Ahorro(0, "rrr", 20000, "Tigre1", 0);
 
         // ----Crear ahorro ----
@@ -36,6 +36,8 @@ public class App {
         // System.out.println(ahorroBaseDatos.getPropietario());
         // }
 
+        // repositorio.buscarAhorro("111");
+        // System.out.println("EL propietario es: " + ahorro1.getPropietario());
         // ----- CUENTA CORRIENTE ----------------------------------------------------
 
         // Corriente corriente1 = new Corriente(0, "zz", 20000, "Bard C nuevo", 0);
@@ -50,8 +52,8 @@ public class App {
         // ArrayList<Corriente> corrientesBaseDatos = (ArrayList<Corriente>)
         // repositorio.listarCorrientes();
 
-        // for (Corriente corrienteBaseDatos : corrientesBaseDatos) {
-        // System.out.println(corrienteBaseDatos.getPropietario());
+        // for (Corriente corrienteBaseDatos : corrientesBaseDatos) {2
+        // System.out.println(corrienteBaseDatos.getP3ropietario());
         // }
 
         GUI_Cuenta gui = new GUI_Cuenta();

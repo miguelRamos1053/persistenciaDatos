@@ -19,10 +19,30 @@ public class GUI_Cuenta {
         System.out.println("Bienvenido al Banco Mundial");
 
         while (correr) {
+            System.out.println("--------------------------");
+            System.out.println("        AHORRO            ");
+            System.out.println("--------------------------");
             System.out.println("1. Crear cuenta de ahorro");
-            System.out.println("2. Crear cuenta Corriente");
-            System.out.println("3. Listar Cuentas");
-            System.out.println("6. Salir");
+            System.out.println("2. Retirar");
+            System.out.println("3. Depositar");
+            System.out.println("4. Transferir Corriente");
+            System.out.println("5. Transferir Ahorro");
+            System.out.println("--------------------------");
+
+            System.out.println("        CORRIENTE         ");
+            System.out.println("--------------------------");
+            System.out.println("6. Crear cuenta Corriente");
+            System.out.println("7. Retirar");
+            System.out.println("8. Depositar");
+            System.out.println("9. Transferir Corriente");
+            System.out.println("10. Transferir Ahorro");
+            System.out.println("--------------------------");
+            System.out.println("        Otras opciónes         ");
+
+            System.out.println("11. Listar Cuentas");
+            System.out.println("12. Salir");
+            System.out.println("--------------------------");
+
             Scanner scanner = new Scanner(System.in);
             int opcion = scanner.nextInt();
             seleccion(opcion);
@@ -36,7 +56,7 @@ public class GUI_Cuenta {
                 crearAhorro();
                 break;
             case 2:
-                // listarPersonas();
+                retirarAhorro();
                 break;
             case 3:
                 listarCuentas();
@@ -78,12 +98,18 @@ public class GUI_Cuenta {
 
     }
 
+    public void retirarAhorro() {
+        servicioCuenta.retirarAhorro("11", 5);
+    }
+
     private void listarCuentas() {
         System.out.println("Listando Cuentas");
         List<Ahorro> personasEnBaseDatos = servicioCuenta.listarAhorros();
 
         for (Ahorro personaEnBaseDatos : personasEnBaseDatos) {
-            System.out.println(personaEnBaseDatos.getPropietario());
+            System.out.println("Numero de cuenta: " + personaEnBaseDatos.getNumeroCuenta()
+                    + " - Propietario: " + personaEnBaseDatos.getPropietario()
+                    + " - Saldo: " + personaEnBaseDatos.getSaldo());
         }
     }
 
